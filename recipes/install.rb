@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: raintank_elasticsearch
+# Cookbook Name:: chef_elasticsearch
 # Recipe:: install
 #
 # Copyright (C) 2016 Raintank, Inc.
@@ -25,9 +25,9 @@ elasticsearch_install 'elasticsearch'
 elasticsearch_configure 'elasticsearch' do
   configuration({
     'node.name' => node.name,
-    'network.host' => node['raintank_elasticsearch']['network_host'],
-    'cluster.name' => node['raintank_elasticsearch']['cluster_name'],
-    'http.bind_host' => node['raintank_elasticsearch']['http_bind_host']
+    'network.host' => node['chef_elasticsearch']['network_host'],
+    'cluster.name' => node['chef_elasticsearch']['cluster_name'],
+    'http.bind_host' => node['chef_elasticsearch']['http_bind_host']
   })
 end
 

@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: raintank_elasticsearch
+# Cookbook Name:: chef_elasticsearch
 # Recipe:: disks
 #
 # Copyright (C) 2016 Raintank, Inc.
@@ -29,10 +29,10 @@ directory '/usr/local/var/data/elasticsearch' do
   action :create
 end
 
-unless node[:raintank_base][:is_img_build]
+unless node[:chef_base][:is_img_build]
   include_recipe "lvm"
   lvm_volume_group 'elasticsearch00' do
-    physical_volumes [ node['raintank_elasticsearch']['elasticsearch_disk'] ]
+    physical_volumes [ node['chef_elasticsearch']['elasticsearch_disk'] ]
 
     logical_volume 'elasticsearch' do
       size        '100%VG'

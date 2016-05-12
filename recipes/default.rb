@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: raintank_elasticsearch
+# Cookbook Name:: chef_elasticsearch
 # Recipe:: default
 #
 # Copyright (C) 2016 Raintank, Inc.
@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-include_recipe "raintank_base::default"
-include_recipe "raintank_elasticsearch::disks"
-include_recipe "raintank_elasticsearch::search_discovery"
-include_recipe "raintank_elasticsearch::install"
+include_recipe "chef_base::default"
+include_recipe "chef_elasticsearch::disks"
+include_recipe "chef_elasticsearch::search_discovery"
+include_recipe "chef_elasticsearch::install"

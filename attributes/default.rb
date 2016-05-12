@@ -1,10 +1,10 @@
 # disk
-default[:raintank_elasticsearch][:elasticsearch_disk] = "/dev/sdb"
+default[:chef_elasticsearch][:elasticsearch_disk] = "/dev/sdb"
 
 # networking
-default[:raintank_elasticsearch][:network_host] = "_eth0:ipv4_"
-default[:raintank_elasticsearch][:cluster_name] = "elasticsearch"
-default[:raintank_elasticsearch][:http_bind_host] = "0.0.0.0"
+default[:chef_elasticsearch][:network_host] = "_eth0:ipv4_"
+default[:chef_elasticsearch][:cluster_name] = "elasticsearch"
+default[:chef_elasticsearch][:http_bind_host] = "0.0.0.0"
 
 # java
 default[:java][:install_flavor] = "oracle"
