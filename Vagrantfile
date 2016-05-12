@@ -87,8 +87,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
 
     chef.run_list = [
-      'recipe[raintank_elasticsearch::disks]',
-      'recipe[raintank_elasticsearch::install]'
+      'recipe[chef_elasticsearch::disks]',
+      'recipe[chef_elasticsearch::install]'
     ]
   end
 end

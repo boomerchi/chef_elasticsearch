@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: raintank_elasticsearch
+# Cookbook Name:: chef_elasticsearch
 # Recipe:: search_discovery
 #
 #
