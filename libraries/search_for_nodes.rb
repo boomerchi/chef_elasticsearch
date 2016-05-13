@@ -15,7 +15,7 @@
 # Taken from an older version of the elasticsearch cookbook.
 
 module ChefElasticsearch
-  Module Helpers
+  module Helpers
 
     # Search for other Elasticsearch nodes
     #
