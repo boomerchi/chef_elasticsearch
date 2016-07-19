@@ -29,5 +29,5 @@ bash 'standalone_elastic' do
     }
    }'
   EOH
-  only_if { !node['chef_elasticsearch']['standalone'] }
+  only_if { node['chef_elasticsearch']['standalone'] }
 end
