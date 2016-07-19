@@ -1,5 +1,6 @@
 # disk
 default[:chef_elasticsearch][:elasticsearch_disk] = "/dev/sdb"
+default[:chef_elasticsearch][:data_dir] = "/usr/local/var/data/elasticsearch"
 
 # networking
 default[:chef_elasticsearch][:network_host] = "_eth0:ipv4_"
@@ -13,6 +14,11 @@ default[:chef_elasticsearch][:standalone] = false
 default[:java][:install_flavor] = "oracle"
 default[:java][:jdk_version] = "8"
 default[:java][:oracle][:accept_oracle_download_terms] = true
+
+# discovery
+default[:chef_elasticsearch][:zen_ping_enabled] = false
+default[:chef_elasticsearch][:unicast_hosts] = []
+default[:chef_elasticsearch][:minimum_master_nodes] = 1
 
 # elasticsearch version
 override[:elasticsearch][:version] = "2.2.0"

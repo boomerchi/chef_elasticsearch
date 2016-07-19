@@ -27,7 +27,11 @@ elasticsearch_configure 'elasticsearch' do
     'node.name' => node.name,
     'network.host' => node['chef_elasticsearch']['network_host'],
     'cluster.name' => node['chef_elasticsearch']['cluster_name'],
-    'http.bind_host' => node['chef_elasticsearch']['http_bind_host']
+    'http.bind_host' => node['chef_elasticsearch']['http_bind_host'],
+    'path.data' => node['chef_elasticsearch']['data_dir'],
+    'discovery.zen.ping.multicast.enabled' => node['chef_elasticsearch']['zen_ping_enabled'],
+    'discovery.zen.ping.unicast.hosts' => node['chef_elasticsearch']['unicast_hosts'],
+    'discovery.zen.ping.minimum_master_nodes' => node['chef_elasticsearch']['minimum_master_nodes']
   })
 end
 
