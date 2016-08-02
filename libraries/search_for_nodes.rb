@@ -17,6 +17,14 @@
 module ChefElasticsearch
   module Helpers
 
+    def find_haproxy
+      return nil? unless node.attribute?('gce')
+      zone = node['gce']['instance']['zone']
+      haproxy = search("node", node['chef_base']['haproxy_search'])
+      h = haproxy.select { |h| h['gce']['instance']['zone'] == zone }.first
+      return (h) ? h.ipaddress : nil
+    end
+
     # Search for other Elasticsearch nodes
     #
     # The `search_for_nodes()` method will use Chef Search to find other nodes matching a search query

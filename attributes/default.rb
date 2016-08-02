@@ -1,3 +1,6 @@
+default[:chef_elasticsearch][:packagecloud_repo] = "raintank/raintank"
+default[:use_statsd] = true
+
 # disk
 default[:chef_elasticsearch][:elasticsearch_disk] = "/dev/sdb"
 default[:chef_elasticsearch][:data_dir] = "/usr/local/var/data/elasticsearch"
@@ -24,3 +27,10 @@ default[:chef_elasticsearch][:minimum_master_nodes] = 1
 override[:elasticsearch][:version] = "2.2.0"
 default[:elasticsearch][:discovery][:node_attribute] = "cloud_v2.local_ipv4"
 default[:elasticsearch][:discovery][:search_query] = "tags:elasticsearch AND chef_environment:#{node.chef_environment}"
+
+# eventtank
+default[:chef_elasticsearch][:eventtank][:topic] = "events"
+default[:chef_elasticsearch][:eventtank][:group] = "eventtank"
+default[:chef_elasticsearch][:eventtank][:kafka_addr] = "localhost:9092"
+default[:chef_elasticsearch][:eventtank][:elastic_addr] = "localhost:9200"
+default[:chef_elasticsearch][:eventtank][:statsd_addr] = "localhost:8125"
